@@ -2,11 +2,11 @@ import 'package:aayojan/screens/common/phone_number.dart';
 import 'package:aayojan/utilities/color.dart';
 import 'package:aayojan/utilities/responsiveUI/size_config.dart';
 import 'package:aayojan/widgets/submit_circle.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ChooseScreen extends StatefulWidget {
+  static String routeName = "/";
   const ChooseScreen({Key? key}) : super(key: key);
 
   @override
@@ -111,7 +111,7 @@ class _ChooseScreenState extends State<ChooseScreen> {
             const SizedBox(height: 100),
             GestureDetector(
               onTap: () {
-                Get.to(const PhoneNumber());
+                Get.toNamed(PhoneNumber.routeName);
               },
               child: submitData(),
             ),

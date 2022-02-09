@@ -2,6 +2,9 @@ import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/material.dart';
 
 class QRCreatePage extends StatefulWidget {
+  static String routeName = "/generateQR";
+
+  const QRCreatePage({Key? key}) : super(key: key);
   @override
   _QRCreatePageState createState() => _QRCreatePageState();
 }
@@ -23,7 +26,7 @@ class _QRCreatePageState extends State<QRCreatePage> {
                 BarcodeWidget(
                   barcode: Barcode.qrCode(),
                   color: Colors.white,
-                  data: controller.text ?? 'Hello world',
+                  data: controller.text,
                   width: 200,
                   height: 200,
                 ),

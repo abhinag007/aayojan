@@ -2,16 +2,17 @@ import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
 
 class PhoneNumberWidget extends StatefulWidget {
-  const PhoneNumberWidget({Key? key}) : super(key: key);
+  static var number = '+91';
+  static var phoneNumber = '';
+  static var countrycode = '+91';
+
+  PhoneNumberWidget({Key? key}) : super(key: key);
 
   @override
   _PhoneNumberWidgetState createState() => _PhoneNumberWidgetState();
 }
 
 class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
-  var _number = '+91';
-  var _phoneNumber = '';
-  var _countrycode = '+91';
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -33,9 +34,10 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
               showDropDownButton: true,
               onChanged: (p) {
                 setState(() {
-                  _countrycode = p.toString();
-                  _number = '';
-                  _number = _countrycode + _phoneNumber;
+                  PhoneNumberWidget.countrycode = p.toString();
+                  PhoneNumberWidget.number = '';
+                  PhoneNumberWidget.number = PhoneNumberWidget.countrycode +
+                      PhoneNumberWidget.phoneNumber;
                 });
               },
               initialSelection: 'IN',
@@ -87,9 +89,10 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
             ),
             onChanged: (String value) {
               setState(() {
-                _phoneNumber = value;
-                _number = '';
-                _number = _countrycode + value;
+                PhoneNumberWidget.phoneNumber = value;
+                PhoneNumberWidget.number = '';
+                PhoneNumberWidget.number =
+                    PhoneNumberWidget.countrycode + value;
               });
             },
           ),

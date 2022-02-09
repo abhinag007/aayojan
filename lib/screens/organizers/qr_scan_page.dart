@@ -5,6 +5,8 @@ import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import '../../widgets/button_widget.dart';
 
 class QRScanPage extends StatefulWidget {
+  static String routeName = "/qrScanner";
+
   const QRScanPage({Key? key}) : super(key: key);
 
   @override

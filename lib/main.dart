@@ -2,10 +2,10 @@
 
 import 'package:aayojan/screens/common/choose_screen.dart';
 import 'package:aayojan/screens/organizers/qr_scan_page.dart';
+import 'package:aayojan/screens/routes.dart';
 import 'package:aayojan/screens/users/qr_create_page.dart';
 import 'package:aayojan/utilities/color.dart';
 import 'package:aayojan/widgets/button_widget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -33,18 +33,19 @@ class MyApp extends StatelessWidget {
         ),
       ),
       // home: const MainPage(title: "Aayojan"),
-      home: const ChooseScreen(),
+      initialRoute: ChooseScreen.routeName,
+      routes: routes,
     );
   }
 }
 
-/*
 class MainPage extends StatefulWidget {
   final String title;
 
   const MainPage({
+    Key key,
     @required this.title,
-  });
+  }) : super(key: key);
 
   @override
   _MainPageState createState() => _MainPageState();
@@ -70,11 +71,11 @@ class _MainPageState extends State<MainPage> {
               ButtonWidget(
                 text: 'Scan QR Code',
                 onClicked: () => Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext context) => QRScanPage(),
+                  builder: (BuildContext context) => const QRScanPage(),
                 )),
               ),
             ],
           ),
         ),
       );
-}*/
+}
