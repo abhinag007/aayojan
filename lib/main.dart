@@ -32,9 +32,9 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      // home: const MainPage(title: "Aayojan"),
-      initialRoute: ChooseScreen.routeName,
-      routes: routes,
+      home: const MainPage(title: "Aayojan"),
+      // initialRoute: ChooseScreen.routeName,
+      // routes: routes,
     );
   }
 }
@@ -50,7 +50,6 @@ class MainPage extends StatefulWidget {
   @override
   _MainPageState createState() => _MainPageState();
 }
-
 class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) => Scaffold(
